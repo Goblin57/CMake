@@ -1,0 +1,12 @@
+name: CMake ESBMC action test workflow
+
+on: push
+
+jobs:
+    test-esbmc-action:
+        runs-on: windows-latest
+        steps:
+            - name: Run ESBMC action
+              uses: esbmc/esbmc-action@v2
+              with:
+                esbmc-options: --incremental-bmc --include Source/
